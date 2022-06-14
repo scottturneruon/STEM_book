@@ -1,0 +1,624 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>STEM Outreach Activities</title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="Introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Web-based VR and AR</li><li class="chapter-item expanded "><a href="web-based_vr_and_ar/web-based_VR/web-based_VR.html"><strong aria-hidden="true">1.</strong> Web-based VR</a></li><li class="chapter-item expanded "><a href="web-based_vr_and_ar/planet_cccu/planet_cccu.html"><strong aria-hidden="true">2.</strong> Planet Canterbury Christ Church</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Physical Computing</li><li class="chapter-item expanded "><a href="physical_computing/EGGBot/EGGBot.html"><strong aria-hidden="true">3.</strong> EGGbot</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Computational Thinking</li><li class="chapter-item expanded "><a href="computational_thinking/thomas_triangles/thomas_triangles.html"><strong aria-hidden="true">4.</strong> Thomas's Triangles</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Artifical Intelligence</li><li class="chapter-item expanded "><a href="artifical_intelligence/placeholder.html"><strong aria-hidden="true">5.</strong> place holder</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">References</li><li class="chapter-item expanded "><a href="references/bibliography.html"><strong aria-hidden="true">6.</strong> Bibliography</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">STEM Outreach Activities</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="web-based-vr"><a class="header" href="#web-based-vr">Web-based VR</a></h2>
+<h3 id="lets-start"><a class="header" href="#lets-start">Let's start</a></h3>
+<p>Load in the following <a href="https://trinket.io/embed/html/850a678202">https://trinket.io/embed/html/850a678202</a></p>
+<p>Now replace the code with the following or for a quick fix copy the code
+from <a href="https://bit.ly/AframeIntro">https://bit.ly/AframeIntro</a>:</p>
+<pre><code class="language-html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src=&quot;https://aframe.io/releases/1.2.0/aframe.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;a-scene&gt;
+      &lt;a-box position=&quot;-1 0.5 -3&quot; rotation=&quot;0 45 0&quot; color=&quot;blue&quot;&gt;&lt;/a-box&gt;
+      &lt;a-sphere position=&quot;0 1.25 -5&quot; radius=&quot;1.25&quot; color=&quot;red&quot;&gt;&lt;/a-sphere&gt;
+      &lt;a-cylinder position=&quot;1 0.75 -3&quot; radius=&quot;0.5&quot;
+      height=&quot;1.5&quot; color=&quot;#FFC65D&quot;&gt;&lt;/a-cylinder&gt;
+      &lt;a-plane position=&quot;0 0 -4&quot; rotation=&quot;-90 0 0&quot; 
+      width=&quot;4&quot; height=&quot;4&quot; color=&quot;#7BC8A4&quot;&gt;&lt;/a-plane&gt;
+      &lt;a-sky color=&quot;#ECECEC&quot;&gt;&lt;/a-sky&gt;
+    &lt;/a-scene&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>You should now see something that looks like:</p>
+<p><img src="web-based_vr_and_ar/web-based_VR/figures/schools4.png" alt="Starting point" /></p>
+<p>Click on the the image on screen and play with using the arrow keys and dragging a mouse around. What is the difference between using the arrow keys and the mouse?</p>
+<p>Okay now we are going to add some text.</p>
+<p>Insert the line:</p>
+<pre><code class="language-html">&lt;a-text value=&quot;Welcome to Computing at CCCU&quot;&gt;&lt;/a-text&gt;
+</code></pre>
+<p>Can you see it? You will need to use the arrow keys to see and even it is difficult - white writing on a grey background.</p>
+<p><img src="web-based_vr_and_ar/web-based_VR/figures/schools5.png" alt="Starting point 2" /></p>
+<p>So let us make it a bit easier to see by change the code slight and specify the text colour as black:</p>
+<pre><code class="language-html">&lt;a-text value=&quot;Welcome to Computing at CCCU&quot; color=&quot;black&quot;&gt;&lt;/a-text&gt;
+</code></pre>
+<h3 id="challenge"><a class="header" href="#challenge">Challenge</a></h3>
+<ol>
+<li>
+<p>Look through the course material and find a module that interest you and change the message so it welcome people to that module.</p>
+</li>
+<li>
+<p>Experiment with repositioning any of the objects including the text, you may have noticed that some of the objects had a <code>position=</code> in their 'coding'; try changing some numbers within one of these, one and at time and work out how they work.</p>
+</li>
+<li>
+<p>There are a number of different objects we can put into the scene some of these are listed within the left-hand menu of <code>&lt;https://bit.ly/AframeIntro&gt;</code> under the heading <code>Primitives</code>. Try a few out for yourself.</p>
+</li>
+</ol>
+<h3 id="try-it-out"><a class="header" href="#try-it-out">Try it out</a></h3>
+<pre><code class="language-html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src=&quot;https://aframe.io/releases/1.2.0/aframe.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;a-scene&gt;
+      &lt;a-box position=&quot;-1 0.5 -3&quot; rotation=&quot;0 45 0&quot; color=&quot;blue&quot;&gt;&lt;/a-box&gt;
+      &lt;a-sphere position=&quot;0 1.25 -5&quot; radius=&quot;1.25&quot; color=&quot;red&quot;&gt;&lt;/a-sphere&gt;
+      &lt;a-cylinder position=&quot;1 0.75 -3&quot; radius=&quot;0.5&quot;
+      height=&quot;1.5&quot; color=&quot;#FFC65D&quot;&gt;&lt;/a-cylinder&gt;
+      &lt;a-plane position=&quot;0 0 -4&quot; rotation=&quot;-90 0 0&quot; 
+      width=&quot;4&quot; height=&quot;4&quot; color=&quot;#7BC8A4&quot;&gt;&lt;/a-plane&gt;
+      &lt;a-sky color=&quot;#ECECEC&quot;&gt;&lt;/a-sky&gt;
+      &lt;a-text position=&quot;-2 2 -3&quot; 
+      animation=&quot;property: rotation; to: 0 360 0; loop: true; dur: 10000&quot; 
+      value=&quot;Welcome to Computing at CCCU&quot; color=&quot;black&quot;&gt;
+      &lt;/a-text&gt;
+    &lt;/a-scene&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<hr />
+<div style="break-before: page; page-break-before: always;"></div><h1 id="web-based-vr-and-ar"><a class="header" href="#web-based-vr-and-ar">Web-based VR and AR</a></h1>
+<h2 id="planet-canterbury-christ-church"><a class="header" href="#planet-canterbury-christ-church">Planet Canterbury Christ Church</a></h2>
+<h2 id="setting-up"><a class="header" href="#setting-up">Setting up</a></h2>
+<p>Using Mozzila's brilliant AFrame, a web-based Virtual Reality model of a planet with rings and include a moon with an image on it. The first step is to set a new site in trinket (or use the old one) and then add a white sphere on a black background:</p>
+<pre><code class="language-html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src=&quot;https://aframe.io/releases/
+    0.9.2/aframe.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;a-scene&gt;
+      &lt;a-sphere position=&quot;0 1.25 -5&quot; radius=&quot;3&quot; 
+      color=&quot;white&quot; &gt;
+      &lt;/a-sphere&gt;   
+      &lt;a-sky color=&quot;black&quot;&gt;&lt;/a-sky&gt;
+  &lt;/a-scene&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Using the Aframe <code>tags</code> to create a white sphere and to create a black background.</p>
+<h3 id="rotate-the-planet-and-add-some-colour"><a class="header" href="#rotate-the-planet-and-add-some-colour">Rotate the planet and add some colour</a></h3>
+<p>Now we can add a surface to the planet by finding an appropriate image to wrap around the sphere. in this example, I used the site Solar Systems Scope <a href="https://www.solarsystemscope.com/textures/">https://www.solarsystemscope.com/textures/</a> and
+downloaded an image of Jupiter's surface <a href="https://www.solarsystemscope.com/textures/download/2k_jupiter.jpg">https://www.solarsystemscope.com/textures/download/2k_jupiter.jpg</a>.</p>
+<ol>
+<li>
+<p>If you are using Glitch: This needs to be copied into the assets folder of the project and the URL generated (by left-clicking on the image when it is in the folder) copied.</p>
+</li>
+<li>
+<p>On you own site upload the image to the same folder as the webpage the <code>URL</code> will be filename</p>
+</li>
+<li>
+<p>Alternatively use this URL in either approach <a href="https://cdn.glitch.com/febf6408-3c33-4608-ac90-b087753e5792%2F2k_jupiter.jpg?v=1573393224376">https://cdn.glitch.com/febf6408-3c33-4608-ac90-b087753e5792%2F2k_jupiter.jpg?v=1573393224376</a></p>
+</li>
+</ol>
+<p>Now by adding <code>src=&quot;&quot;</code> and in the speech-marks paste in the URL for the image; the image wraps around the sphere:</p>
+<pre><code class="language-html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src=&quot;https://aframe.io/releases/0.9.2/
+    aframe.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;a-scene&gt;
+      &lt;a-sphere position=&quot;0 1.25 -5&quot; radius=&quot;3&quot; 
+      color=&quot;white&quot; src=&quot;https://cdn.glitch.com/febf6408-3c33-4608-ac90-b087753e5792%2F2k_jupiter.jpg?v=1573393224376&quot;&gt;
+      &lt;/a-sphere&gt;   
+      &lt;a-sky color=&quot;black&quot;&gt;&lt;/a-sky&gt;
+    &lt;/a-scene&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Now to rotate it add:</p>
+<pre><code class="language-html">animation=&quot;property: rotation; to: 0 360 0; loop: true; dur: 10000&quot;
+</code></pre>
+<p>See below:</p>
+<pre><code class="language-html">&lt;a-sphere position=&quot;0 1.25 -5&quot;  
+   radius=&quot;3&quot; color=&quot;white&quot;  
+   src=&quot;https://cdn.glitch.com/febf6408-3c33-4608-ac90-b087753e5792%2F2k_jupiter.jpg?v=1573393224376&quot; 
+   animation=&quot;property: rotation; to: 0  360 0; loop: true; dur: 10000&quot;&gt;
+</code></pre>
+<h3 id="planets-need-rings"><a class="header" href="#planets-need-rings">Planets need Rings</a></h3>
+<p>In Aframe if you nest another object with the <code>&lt;&gt;</code> <code>&lt;\&gt;</code> of another object it's position is set relative to the first object. This principle is going to be used here put a ring around the planet. </p>
+<p>The first stage is to add the ring object is used for this and a the same rotating animation is used. We are going to use a squashed doughnut shape <code>&lt;a-torus\&gt;</code> to do this. When the webpage is running you will probably need use the down arrow key to zoom out to see the ring.</p>
+<pre><code class="language-html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src=&quot;https://aframe.io/releases/0.9.2/aframe.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;a-scene&gt;
+      &lt;a-sphere position=&quot;0 1.25 -5&quot; radius=&quot;3&quot; color=&quot;white&quot; src=&quot;https://cdn.glitch.com/febf6408-3c33-4608-ac90-b087753e5792%2F2k_jupiter.jpg?v=1573393224376&quot;
+                animation=&quot;property: rotation; to: 0 360 0; loop: true; dur: 10000&quot;&gt;
+        &lt;a-torus position=&quot;0 0 0&quot; arc=&quot;360&quot;
+                rotation=&quot;90 0 0&quot;
+                color=&quot;white&quot; radius=&quot;5&quot;
+                radius-tubular=&quot;0.05&quot;
+                animation=&quot;property: rotation; to:  90 0 0; loop: true; dur: 3000&quot;&gt;
+          &lt;/a-torus&gt;
+      &lt;/a-sphere&gt;   
+      &lt;a-sky color=&quot;black&quot;&gt;&lt;/a-sky&gt;
+    &lt;/a-scene&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<blockquote>
+<p><strong>DON'T PANIC:</strong> It is not expected that you will necessarily understand this all in one go. So experiment now try different values for; <code>rotation; to: 90 0 0</code> for example <code>to: -360 360 0;</code> and <code>dur: 3000</code>, what changed?</p>
+</blockquote>
+<p><img src="web-based_vr_and_ar/planet_cccu/figures/Picture1.png" alt="Starting point" /></p>
+<h3 id="it-needs-a-moon"><a class="header" href="#it-needs-a-moon">It needs a moon</a></h3>
+<p>The process is really just combining elements of the steps 1-3. </p>
+<p>Create a new sphere,set the radius to something around 0.25 to 0.5; colour it with whatever you feel is appropriate, add an image (in the example code one has been added) if you want. Set a rotation it is is fun to play with these a bit and place the moon on the ring (setting <code>position=&quot;5 0 0&quot;</code> in this case does this).  If the images are accessible as web sources this could be a great option.</p>
+<p>Lets put a moon on the ring (ie. within the <code>&lt;a-torus&gt;</code> and <code>&lt;a-torus\&gt;</code> tags).</p>
+<p>So the code for the moon;</p>
+<pre><code class="language-html">&lt;a-sphere position=&quot;5 0 0&quot;
+  rotation=&quot;0 0 0&quot;
+  radius=&quot;0.5&quot;
+  color=&quot;yellow&quot; src=&quot;https://cdn.glitch.com/febf6408-3c33-4608-ac90-b087753e5792%2Fpanic.png?v=1573395380360&quot;
+  animation=&quot;property: rotation; to:  0 259 0; loop: true; dur: 3000&quot;&gt;
+&lt;/a-sphere&gt;
+</code></pre>
+<p>Gets put inside that of the torus, so the whole thing becomes:</p>
+<pre><code class="language-html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src=&quot;https://aframe.io/releases/0.9.2/aframe.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;a-scene&gt;
+      &lt;a-sphere position=&quot;0 1.25 -5&quot; radius=&quot;3&quot; color=&quot;white&quot; src=&quot;https://cdn.glitch.com/febf6408-3c33-4608-ac90-b087753e5792%2F2k_jupiter.jpg?v=1573393224376&quot;
+                animation=&quot;property: rotation; to: 0 360 0; loop: true; dur: 10000&quot;&gt;
+        &lt;a-torus position=&quot;0 0 0&quot; arc=&quot;360&quot;
+                rotation=&quot;90 0 0&quot;
+                color=&quot;white&quot; radius=&quot;5&quot;
+                radius-tubular=&quot;0.05&quot;
+                animation=&quot;property: rotation; to:  90 90 0; loop: true; dur: 3000&quot;&gt;
+                &lt;a-sphere position=&quot;5 0 0&quot;
+                  rotation=&quot;0 0 0&quot;
+                  radius=&quot;0.5&quot;
+                  color=&quot;yellow&quot; src=&quot;https://cdn.glitch.com/febf6408-3c33-4608-ac90-b087753e5792%2Fpanic.png?v=1573395380360&quot;
+                  animation=&quot;property: rotation; to:  0 259 0; loop: true; dur: 3000&quot;&gt;
+              &lt;/a-sphere&gt;
+          &lt;/a-torus&gt;
+      &lt;/a-sphere&gt;   
+      &lt;a-sky color=&quot;black&quot;&gt;&lt;/a-sky&gt;
+    &lt;/a-scene&gt;
+  &lt;/body&gt;
+&lt;/html&gt;               
+</code></pre>
+<h3 id="lets-add-text-and-stars"><a class="header" href="#lets-add-text-and-stars">Let's add text and stars</a></h3>
+<p>So we might want to put some text into the world we can do that with <code>&lt;a-text value=&quot;&quot;&gt;</code> So adding this to the code (see below) put a message on the screen, though you may have to use the down arrow to see it.</p>
+<pre><code class="language-html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src=&quot;https://aframe.io/releases/0.9.2/aframe.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;a-scene&gt;
+      &lt;a-sphere position=&quot;0 1.25 -5&quot; radius=&quot;3&quot; color=&quot;white&quot; src=&quot;https://cdn.glitch.com/febf6408-3c33-4608-ac90-b087753e5792%2F2k_jupiter.jpg?v=1573393224376&quot;
+                animation=&quot;property: rotation; to: 0 360 0; loop: true; dur: 10000&quot;&gt;
+        &lt;a-torus position=&quot;0 0 0&quot; arc=&quot;360&quot;
+                rotation=&quot;90 0 0&quot;
+                color=&quot;white&quot; radius=&quot;5&quot;
+                radius-tubular=&quot;0.05&quot;
+                animation=&quot;property: rotation; to:  90 90 0; loop: true; dur: 3000&quot;&gt;
+                &lt;a-sphere position=&quot;5 0 0&quot;
+                  rotation=&quot;0 0 0&quot;
+                  radius=&quot;0.5&quot;
+                  color=&quot;yellow&quot; src=&quot;https://cdn.glitch.com/febf6408-3c33-4608-ac90-b087753e5792%2Fpanic.png?v=1573395380360&quot;
+                  animation=&quot;property: rotation; to:  0 259 0; loop: true; dur: 3000&quot;&gt;
+              &lt;/a-sphere&gt;
+          &lt;/a-torus&gt;
+      &lt;/a-sphere&gt;   
+      &lt;a-text value=&quot;Planet CCCU Computing&quot; position=&quot;0 4 -2&quot;&gt;&lt;/a-text&gt;
+      &lt;a-sky color=&quot;black&quot;&gt;&lt;/a-sky&gt;
+    &lt;/a-scene&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><img src="web-based_vr_and_ar/planet_cccu/figures/Picture2.png" alt="Starting point" /></p>
+<p>We can get interesting effects if we add the text between <code>&lt;a-sphere\&gt;</code> and <code>&lt;a-scene\&gt;</code> Try adding this in there. <code>&lt;a-text value=&quot;Planet CCCU Computing&quot; position=&quot;0 3 -2&quot;&gt;&lt;a-text\&gt;</code></p>
+<p>Have a play with altering the text and putting the line elsewhere in the code. What happens?</p>
+<p>Now going to use an image to change the background. The image is <code>&quot;space&quot;</code> by fleskw is licensed with CC BY 2.0. To view a copy of this license, visit <a href="https://creativecommons.org/licenses/by/2.0">https://creativecommons.org/licenses/by/2.0</a>.</p>
+<p>You will need to change the sky colour to a light colour for this to work. So change the sky line in the code to white we are going to use the space image to make it a bit easier it is in this form <a href="https://cdn.glitch.com/425c1a98-7ba9-463d-817d-6b491a516246%2F97b3bf6d-ced1-4041-80d4-b6c9a98ba43d.jfif?v=1614341330757">https://cdn.glitch.com/425c1a98-7ba9-463d-817d-6b491a516246%2F97b3bf6d-ced1-4041-80d4-b6c9a98ba43d.jfif?v=1614341330757</a></p>
+<pre><code class="language-html">&lt;a-sky color=&quot;white&quot; src=&quot;https://cdn.glitch.com/425c1a98-7ba9-463d-817d-6b491a516246%2F97b3bf6d-ced1-4041-80d4-b6c9a98ba43d.jfif?v=1614341330757&quot;&gt;&lt;/a-sky&gt;
+</code></pre>
+<p>Now adding it the code in place of the current <code>&lt;a-sky\&gt;</code> line we:</p>
+<pre><code class="language-html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src=&quot;https://aframe.io/releases/0.9.2/aframe.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;a-scene&gt;
+      &lt;a-sphere position=&quot;0 1.25 -5&quot; radius=&quot;3&quot; color=&quot;white&quot; src=&quot;https://cdn.glitch.com/
+      febf6408-3c33-4608-ac90-b087753e5792%2F2k_jupiter.jpg?v=1573393224376&quot;
+                animation=&quot;property: rotation; to: 0 360 0; loop: true; dur: 10000&quot;&gt;
+        &lt;a-torus position=&quot;0 0 0&quot; arc=&quot;360&quot;
+                rotation=&quot;90 0 0&quot;
+                color=&quot;white&quot; radius=&quot;5&quot;
+                radius-tubular=&quot;0.05&quot;
+                animation=&quot;property: rotation; to:  90 90 0; loop: true; dur: 3000&quot;&gt;
+                &lt;a-sphere position=&quot;5 0 0&quot;
+                  rotation=&quot;0 0 0&quot;
+                  radius=&quot;0.5&quot;
+                  color=&quot;yellow&quot; src=&quot;https://cdn.glitch.com/febf6408-3c33-4608-ac90-b087753e5792%2Fpanic.png?v=1573395380360&quot;
+                  animation=&quot;property: rotation; to:  0 259 0; loop: true; dur: 3000&quot;&gt;
+              &lt;/a-sphere&gt;
+          &lt;/a-torus&gt;
+      &lt;/a-sphere&gt;   
+      &lt;a-text value=&quot;Planet CCCU Computing&quot; position=&quot;0 4 -2&quot;&gt;&lt;/a-text&gt;
+      &lt;a-sky color=&quot;white&quot; src=&quot;https://cdn.glitch.com/425c1a98-7ba9-463d-817d-6b491a516246%2F97b3bf6d-ced1-4041-80d4-b6c9a98ba43d.jfif?v=1614341330757&quot;&gt;&lt;/a-sky&gt;
+    &lt;/a-scene&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>We are done!</p>
+<p><img src="web-based_vr_and_ar/planet_cccu/figures/planet3.png" alt="Starting point" /></p>
+<hr />
+<div style="break-before: page; page-break-before: always;"></div><h1 id="physical-computing"><a class="header" href="#physical-computing">Physical Computing</a></h1>
+<h2 id="eggbot"><a class="header" href="#eggbot">EGGbot</a></h2>
+<h3 id="inspiration"><a class="header" href="#inspiration">Inspiration</a></h3>
+<p>Three inspirations for this project <strong>Eggbot</strong>:</p>
+<ol>
+<li>
+<p><a href="http://www.instructables.com/id/Plastic-Egg-Bot/">http://www.instructables.com/id/Plastic-Egg-Bot/</a></p>
+</li>
+<li>
+<p>Femi Owolade supported by Nic Hughes ran a session at Mozilla Festival 2016 using the Crumble's to make a wheeled robot.</p>
+</li>
+<li>
+<p>The junkbot project <a href="https://junkbots.blogspot.co.uk/">https://junkbots.blogspot.co.uk/</a></p>
+</li>
+</ol>
+<h3 id="kit"><a class="header" href="#kit">Kit</a></h3>
+<ul>
+<li>
+<p>Kinder Egg (without the Chocolate and toy)</p>
+</li>
+<li>
+<p>Crumble Controller available at <a href="https://redfernelectronics.co.uk/shop/">https://redfernelectronics.co.uk/shop/</a></p>
+</li>
+<li>
+<p>4x Crocodile clips and leads</p>
+</li>
+<li>
+<p>Battery pack and 3xAA batteris</p>
+</li>
+<li>
+<p>Vibrating motor or small DC motor with a weight added to the axel</p>
+</li>
+<li>
+<p>Tape (lots of)</p>
+</li>
+<li>
+<p>Pens</p>
+</li>
+<li>
+<p>Paper</p>
+</li>
+<li>
+<p>Scissors</p>
+</li>
+<li>
+<p>Glue and Gluegun (optional)</p>
+</li>
+</ul>
+<h3 id="stage1-fix-the-vibrating-motor-into-the-egg"><a class="header" href="#stage1-fix-the-vibrating-motor-into-the-egg">Stage1: Fix the vibrating motor into the Egg.</a></h3>
+<p>Put the vibrating motor into the Egg with the motor electrical connections sticking out the bottom larger half of the egg. </p>
+<p>Make sure the unbalanced load is free to move -- this is bit that causes the vibrations needed to move the egg. The motor can be held in place by sticky-tack or strong tape, or glue (when using glue this is done under adult supervision only)</p>
+<p><img src="physical_computing/EGGBot/figures/eggbot_stage1.png" alt="Eggbot drawing stage 1" /></p>
+<h3 id="stage-2-sticking-the-pens-on"><a class="header" href="#stage-2-sticking-the-pens-on">Stage 2: Sticking the pens on</a></h3>
+<p>This is the trickiest bit. The easiest way to do is cut a strip of tape.</p>
+<p>Place two pens onto the tape ensuring the pens are the same length from the tape to the nib and the distance between the pens on the tape are far enough apart to place the egg between them.</p>
+<p><img src="physical_computing/EGGBot/figures/eggbot_stage2.png" alt="Eggbot drawing stage2" /></p>
+<p>If you are using three pens, the third pen should be placed so that all three form a triangle with equal sides, that means the egg can stand-up on a piece of paper on the pen nibs, without anything supporting it.</p>
+<p>If you are using four pens, the other two pens should be placed so that all four form a square with equal sides, that means the egg can stand-up on a piece of paper on the pen nibs, without anything supporting it.</p>
+<h3 id="stage-3-add-the-battery-pack-and-go"><a class="header" href="#stage-3-add-the-battery-pack-and-go">Stage 3: Add the battery pack and go.</a></h3>
+<p>Using two wires connecting the battery, to the motors. Remove the nibs and set the bot off. It is hopefully vibrating and shaking and
+scribbling lines on the paper.</p>
+<p><img src="physical_computing/EGGBot/figures/eggbot_stage3.png" alt="Eggbot drawingstage3" /></p>
+<p>To see one in action go to: <a href="https://www.youtube.com/watch?v=NRlntdmdQRo">https://www.youtube.com/watch?v=NRlntdmdQRo</a></p>
+<h3 id="stage-3-add-control-sort-of-crumble"><a class="header" href="#stage-3-add-control-sort-of-crumble">Stage 3: Add Control (sort of) Crumble</a></h3>
+<ol>
+<li>Disconnect the battery connection (the connections on the motor can stay as they are). </li>
+<li>Connect the USB cable to the Crumble. </li>
+<li>To the right of theUSB connect there are two connections marked + and -:
+<ul>
+<li>Connect a Red wire to the + connection and the other end to the red wire of the battery pack. </li>
+<li>Connect a black wire to the -- connection and the other end to the black wire of the battery pack.</li>
+</ul>
+</li>
+</ol>
+<p><img src="physical_computing/EGGBot/figures/eggbot_stage4.png" alt="Eggbot drawing with crumble" /></p>
+<p>On the Crumble, on the right-side there are two motor connections connect the Motor to these connections. Don't worry about which of the motors wires is need you swap them around later.</p>
+<p><img src="physical_computing/EGGBot/figures/eggbot_stage5.png" alt="Eggbot and crumble" /></p>
+<h3 id="stage-4-alets-start-programming-it"><a class="header" href="#stage-4-alets-start-programming-it">Stage 4: ALet's start programming it</a></h3>
+<p>The software can be found at <a href="https://redfernelectronics.co.uk/crumble-software/">https://redfernelectronics.co.uk/crumble-software/</a> it includes how to set it up on your own machine.</p>
+<p>Start the Crumble software. Drag from the left the Program start, motor, and wait blocks. Now join the up start block at the top and the motor block next and the wait block last.</p>
+<p><img src="physical_computing/EGGBot/figures/eggbot_stage6.png" alt="Eggbot and crumble code" /></p>
+<p>Your code should look like this:</p>
+<p><img src="physical_computing/EGGBot/figures/eggbot_stage7.png" alt="Eggbot and crumble code initial" /></p>
+<p>Click on the stop within the motor block. It should change to forward.</p>
+<p>Now you are ready to make it move. Press the green arrow and with the battery pack on, it should (hopefully) keep moving.</p>
+<p><img src="physical_computing/EGGBot/figures/eggbot_stage8.png" alt="Eggbot and crumble - start" /></p>
+<p>If you put a second motor block after the wait block with the stop in the block. It such then stop after 1 second of moving.</p>
+<h3 id="stage-5-making-it-do-more"><a class="header" href="#stage-5-making-it-do-more">Stage 5: Making it do more</a></h3>
+<ol>
+<li>Drag a do-until block in (found in the control menu). </li>
+<li>Go to variable menu and add a new variable, I have used <code>t</code>, select the block marked <code>let=</code>, and drag a <code>t</code> into the blank space. </li>
+<li>Drag an increase block onto the screen and drag a <code>t</code> into the blank space.</li>
+</ol>
+<p><img src="physical_computing/EGGBot/figures/eggbot_stage9.png" alt="Eggbot and crumble - Lets do a little more" /></p>
+<p>Go to the operator menu and drag onto the screen an <code>=</code> block, go back to variables menu and drag a <code>t</code> into the first space on the <code>=</code> block and click on the second space on the block and type in <code>5</code>.</p>
+<p><img src="physical_computing/EGGBot/figures/eggbot_stage10.png" alt="Eggbot and crumble - Lets take it a little further" /></p>
+<p>Now for the challenge put all these together to copy what is shown below. Now, put the egg-bot on the paper, with the pen lids off, press the green triangle and the motors should be spun in different directions.</p>
+<p>This is a junkbot so it may just cause the bot to move a slightly  different directions but hopefully it should just draw some squiggly lines.</p>
+<h1 id="computational-thinking"><a class="header" href="#computational-thinking">Computational Thinking</a></h1>
+<h2 id="thomass-tangles"><a class="header" href="#thomass-tangles">Thomas's Tangles</a></h2>
+<p>A recently released book Teaching Computing Unplugged in Primary Schools
+edited by Helen Caldwell (University of Northampton) and Neil Smith
+(Open University) has a number of interesting chapters by authors who
+are passionate about how computing is taught in schools. The central
+theme is unplugged activities, without using computers, but still teach
+the fundamental of computational thinking.</p>
+<p>Ok, confession time. I co-wrote, along with Katharine Childs (Raspberry
+Pi Foudation), Chapter 3 Artists so I am biased here, but I believe in
+the central theme of Unplugged Computing. Computing, and Computational
+Thinking in general, is not just about programming and using a computer
+(though using computers and programming are vitally important to
+Computing) but it is also about many other things including
+problem-solving, being creative and working collaboratively.</p>
+<p>Chapter 3 is about linking these computational thinking ideas to produce
+visual art, by applying computing principles including repetition,
+following and refining algorithms, and abstraction. The chapter also
+looks, how these links have already being made, with examples such Sol
+Le Witt where not all the work that was produced by the artist himself,
+but some by others following his written instructions - in other words
+an algorithm. There is even a game Thomas's Tangles</p>
+<p>The other chapters make links with areas such as Robots, Musicians,
+Explorers, Magicians, Gamers, Cooks and Scientists.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="computational-thinking-1"><a class="header" href="#computational-thinking-1">Computational Thinking</a></h1>
+<h2 id="thomas-tangles"><a class="header" href="#thomas-tangles">Thomas Tangles</a></h2>
+<p>This simplifies the algorithm Thomas' Tangles (named after my son who helped develop it) in Chapter 3 of the book discussed in <a href="http://compuationalthinking.blogspot.co.uk/2016/11/how-to-be-unplugged-artist.html">http://compuationalthinking.blogspot.co.uk/2016/11/how-to-be-unplugged-artist.html</a></p>
+<p>Using crayons, pencils or pens, we are going to follow an algorithm to create a random drawing. This could be done in pairs and you will need squared paper.</p>
+<p>Person A: Rolls the dice and reads out the instructions - their role is to roll the dice, interpret the algorithm and tell the 'robot' what to do.</p>
+<p>Person B: Is the 'robot carrying out the instructions'. The lines are solid blocks of colour so move four squares does also mean colour in the squares between the start and finish in the direction of movement.</p>
+<p><img src="computational_thinking/thomas_triangles/figures/tt1.JPG" alt="Thomas's Tangles" /></p>
+<p>When a new central square is needed the roles of A and B swap (so A is the 'robot' and B rolls the dice and reads out the instruction). The roles keep swapping.</p>
+<pre><code class="language-ps">Start from a random square – call it the centre square
+Repeat until end of game
+If die roll = 1
+    Roll die for number of moves
+    move die roll number of steps up the page
+If die roll = 2
+    Roll die for number of moves
+    move die roll number of steps down the page
+If die roll = 3
+    Roll die for number of moves
+    move die roll number of steps to the left 
+If die roll = 4
+    Roll die for number of moves
+    move die roll number of steps to the right
+If die roll = 5
+    Roll die
+    If die = 1 change colour to Red
+    If die = 2 change colour to Blue
+        If die = 3 change colour to Black
+    If die = 4 change colour to Green
+    If die = 5 change colour to Orange
+    If die = 6 change colour to Yellow
+If die roll = 6
+    Roll die
+    Return to current centre square
+If the second die roll=6
+    randomly select new centre square
+If block is off the page
+    randomly select new centre square
+</code></pre>
+<p>The Scratch version can be here <a href="https://scratch.mit.edu/projects/135816631/">https://scratch.mit.edu/projects/135816631/</a> if you wish to see the code.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="content-waiting-to-be-added"><a class="header" href="#content-waiting-to-be-added">content waiting to be added.</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bibliography"><a class="header" href="#bibliography">Bibliography</a></h1>
+<p>Barr, D., Harrion, J., and Conery, L. (2011) Computational Thinking: A Digital Age Skill for Everyone Leading and Learning with Technology, ISTE, March/April 2011 [accessed via http://www.csta.acm.org/Curriculum/sub/CurrFiles/LLCTArticle.pdf on 26/12/2015]</p>
+<p>Barr, V. and Stephenson, C. (2011) Bringing Computational Thinking to K-12, ACM Inroads, Vol 2. No 1, pp 48 - 54 [accessed via http://csta.acm.org/Curriculum/sub/CurrFiles/BarrStephensonInroadsArticle.pdf on 26/12/2015] https://doi.org/10.1145/1929887.1929905</p>
+<p>Computing at School (2013) Computing in the National Curriculum: A guide
+for primary teachers [accessed via http://www.computingatschool.org.uk/data/uploads/CASPrimaryComputing.pdf on 13/3/2016]</p>
+<p>Denning, Peter J. (2009) Beyond Computational Thinking, Communications
+of the ACM Vol 52, Issue 6, pp 28 - 30 [accessed via http://sgd.cs.colorado.edu/wiki/images/7/71/Denning.pdf on 26/12/2015]</p>
+<p>DfE: Department for Education (2013) National Curriculum in England: computing programmes of study</p>
+<p>Freedman, J. (2015) Cycloid Drawing Machine [online] URL: https://www.kickstarter.com/projects/1765367532/cycloid-drawing-machine accessed on 3/3/2016.</p>
+<p>Google. 2016 Project Jacquard [online] URL: https://www.google.com/atap/project-jacquard/ accesed on:1/3/2016.</p>
+<p>Knuth, D. 1968. Preface, The Art of Programming vol 1., Boston: Addison-Wesley.</p>
+<p>Knuth, D. 1996. Foreword. In: Petkovsek, M., Wilf, H., Zeilberger, D.A=B.. Natick: A K Peters/CRC Press, vii.</p>
+<p>Koetsier, T., 2001. On the prehistory of programmable machines: Musical automata, looms, calculators. Mechanism and Machine Theory, 36(5), 589-603. https://doi.org/10.1016/S0094-114X(01)00005-2</p>
+<p>Menegus, B (2016) CDMS: Built with Processing [online] URL: http://wheelof.com/sketch/ accessed on 4/3/2016</p>
+<p>MoMA. 2012. MoMA| Video Games [online] URL: http://www.moma.org/explore/inside_out/2012/11/29\video-games-14-in-the-collection-for-starters/ accessed on: 1/3/2016.</p>
+<p>Papert, S (1993) The children's machine: Rethinking schools in the age of the computer. New York: Basic books</p>
+<p>Pearson M (2011) Generative Art: A practical guide using Processing, New York: Manning, 3-12</p>
+<p>Selby, C. and Woollard, J. (2013) Computational thinking: the developing definition University of Southampton [accessed via http://eprints.soton.ac.uk/356481/7/Selby_Woollard_bg_soton_eprints.pdf on 26/12/2015]</p>
+<p>The Art Story (2016) Sol LeWitt [online] http://www.theartstory.org/artist-lewitt-sol.htm accessed on: 6/3/2016</p>
+<p>Wing, J. (2006) Computational Thinking Communications of the ACM Vol 49 pp 33 - 35 [accessed via https://www.cs.cmu.edu/ 15110-s13/Wing06-ct.pdf on 26/12/2015]https://doi.org/10.1145/1118178.1118215</p>
+<p>Wing, J. (2011) Computational Thinking - What and Why The Link - News from the School of Computer Science, Issue 6.0, Spring 2011 [accessed
+via http://www.cs.cmu.edu/sites/default/files/11-399_The_Link_Newsletter-3.pdf on 26/12/2015]</p>
+<p>Liukas L (2015) Activity 7 The Robots Hello Ruby - Adventures in Coding, New York: Feiwel and Friends, 94-97.</p>
+<p>Schofield, S (2016) Generative Artworks [online] URL: http://www.simonschofield.net</p>
+<p>Turner S (2016) 3 'Art' Scratch Projects [online] URL: http://compuationalthinking.blogspot.co.uk/2016/03/3-of-my-scratch-projects-for-week.html accessed on: 12/3/2016.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
+        });
+        </script>
+    </body>
+</html>

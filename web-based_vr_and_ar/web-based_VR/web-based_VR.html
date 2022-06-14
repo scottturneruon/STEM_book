@@ -1,0 +1,247 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Web-based VR - STEM Outreach Activities</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../Introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Web-based VR and AR</li><li class="chapter-item expanded "><a href="../../web-based_vr_and_ar/web-based_VR/web-based_VR.html" class="active"><strong aria-hidden="true">1.</strong> Web-based VR</a></li><li class="chapter-item expanded "><a href="../../web-based_vr_and_ar/planet_cccu/planet_cccu.html"><strong aria-hidden="true">2.</strong> Planet Canterbury Christ Church</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Physical Computing</li><li class="chapter-item expanded "><a href="../../physical_computing/EGGBot/EGGBot.html"><strong aria-hidden="true">3.</strong> EGGbot</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Computational Thinking</li><li class="chapter-item expanded "><a href="../../computational_thinking/thomas_triangles/thomas_triangles.html"><strong aria-hidden="true">4.</strong> Thomas's Triangles</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Artifical Intelligence</li><li class="chapter-item expanded "><a href="../../artifical_intelligence/placeholder.html"><strong aria-hidden="true">5.</strong> place holder</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">References</li><li class="chapter-item expanded "><a href="../../references/bibliography.html"><strong aria-hidden="true">6.</strong> Bibliography</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">STEM Outreach Activities</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="web-based-vr"><a class="header" href="#web-based-vr">Web-based VR</a></h2>
+<h3 id="lets-start"><a class="header" href="#lets-start">Let's start</a></h3>
+<p>Load in the following <a href="https://trinket.io/embed/html/850a678202">https://trinket.io/embed/html/850a678202</a></p>
+<p>Now replace the code with the following or for a quick fix copy the code
+from <a href="https://bit.ly/AframeIntro">https://bit.ly/AframeIntro</a>:</p>
+<pre><code class="language-html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src=&quot;https://aframe.io/releases/1.2.0/aframe.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;a-scene&gt;
+      &lt;a-box position=&quot;-1 0.5 -3&quot; rotation=&quot;0 45 0&quot; color=&quot;blue&quot;&gt;&lt;/a-box&gt;
+      &lt;a-sphere position=&quot;0 1.25 -5&quot; radius=&quot;1.25&quot; color=&quot;red&quot;&gt;&lt;/a-sphere&gt;
+      &lt;a-cylinder position=&quot;1 0.75 -3&quot; radius=&quot;0.5&quot;
+      height=&quot;1.5&quot; color=&quot;#FFC65D&quot;&gt;&lt;/a-cylinder&gt;
+      &lt;a-plane position=&quot;0 0 -4&quot; rotation=&quot;-90 0 0&quot; 
+      width=&quot;4&quot; height=&quot;4&quot; color=&quot;#7BC8A4&quot;&gt;&lt;/a-plane&gt;
+      &lt;a-sky color=&quot;#ECECEC&quot;&gt;&lt;/a-sky&gt;
+    &lt;/a-scene&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>You should now see something that looks like:</p>
+<p><img src="figures/schools4.png" alt="Starting point" /></p>
+<p>Click on the the image on screen and play with using the arrow keys and dragging a mouse around. What is the difference between using the arrow keys and the mouse?</p>
+<p>Okay now we are going to add some text.</p>
+<p>Insert the line:</p>
+<pre><code class="language-html">&lt;a-text value=&quot;Welcome to Computing at CCCU&quot;&gt;&lt;/a-text&gt;
+</code></pre>
+<p>Can you see it? You will need to use the arrow keys to see and even it is difficult - white writing on a grey background.</p>
+<p><img src="figures/schools5.png" alt="Starting point 2" /></p>
+<p>So let us make it a bit easier to see by change the code slight and specify the text colour as black:</p>
+<pre><code class="language-html">&lt;a-text value=&quot;Welcome to Computing at CCCU&quot; color=&quot;black&quot;&gt;&lt;/a-text&gt;
+</code></pre>
+<h3 id="challenge"><a class="header" href="#challenge">Challenge</a></h3>
+<ol>
+<li>
+<p>Look through the course material and find a module that interest you and change the message so it welcome people to that module.</p>
+</li>
+<li>
+<p>Experiment with repositioning any of the objects including the text, you may have noticed that some of the objects had a <code>position=</code> in their 'coding'; try changing some numbers within one of these, one and at time and work out how they work.</p>
+</li>
+<li>
+<p>There are a number of different objects we can put into the scene some of these are listed within the left-hand menu of <code>&lt;https://bit.ly/AframeIntro&gt;</code> under the heading <code>Primitives</code>. Try a few out for yourself.</p>
+</li>
+</ol>
+<h3 id="try-it-out"><a class="header" href="#try-it-out">Try it out</a></h3>
+<pre><code class="language-html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src=&quot;https://aframe.io/releases/1.2.0/aframe.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;a-scene&gt;
+      &lt;a-box position=&quot;-1 0.5 -3&quot; rotation=&quot;0 45 0&quot; color=&quot;blue&quot;&gt;&lt;/a-box&gt;
+      &lt;a-sphere position=&quot;0 1.25 -5&quot; radius=&quot;1.25&quot; color=&quot;red&quot;&gt;&lt;/a-sphere&gt;
+      &lt;a-cylinder position=&quot;1 0.75 -3&quot; radius=&quot;0.5&quot;
+      height=&quot;1.5&quot; color=&quot;#FFC65D&quot;&gt;&lt;/a-cylinder&gt;
+      &lt;a-plane position=&quot;0 0 -4&quot; rotation=&quot;-90 0 0&quot; 
+      width=&quot;4&quot; height=&quot;4&quot; color=&quot;#7BC8A4&quot;&gt;&lt;/a-plane&gt;
+      &lt;a-sky color=&quot;#ECECEC&quot;&gt;&lt;/a-sky&gt;
+      &lt;a-text position=&quot;-2 2 -3&quot; 
+      animation=&quot;property: rotation; to: 0 360 0; loop: true; dur: 10000&quot; 
+      value=&quot;Welcome to Computing at CCCU&quot; color=&quot;black&quot;&gt;
+      &lt;/a-text&gt;
+    &lt;/a-scene&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<hr />
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../Introduction.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../../web-based_vr_and_ar/planet_cccu/planet_cccu.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../Introduction.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../../web-based_vr_and_ar/planet_cccu/planet_cccu.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
