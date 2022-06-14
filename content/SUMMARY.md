@@ -8,7 +8,7 @@
 - [EGGbot](./physical_computing/EGGBot/EGGBot.md)
 ---
 # Computational Thinking
-- [Thomas's Triangles](./computational_thinking/thomas_triangles/thomas_triangles.md)
+- [Thomas' Tangles](./computational_thinking/thomas_triangles/thomas_triangles.md)
 ---
 # Artifical Intelligence
 - [place holder](./artifical_intelligence/placeholder.md)
