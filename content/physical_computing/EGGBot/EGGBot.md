@@ -111,33 +111,3 @@ Go to the operator menu and drag onto the screen an `=` block, go back to variab
 Now for the challenge put all these together to copy what is shown below. Now, put the egg-bot on the paper, with the pen lids off, press the green triangle and the motors should be spun in different directions.
 
 This is a junkbot so it may just cause the bot to move a slightly  different directions but hopefully it should just draw some squiggly lines.
-
-# Computational Thinking
-
-## Thomas's Tangles
-
-A recently released book Teaching Computing Unplugged in Primary Schools
-edited by Helen Caldwell (University of Northampton) and Neil Smith
-(Open University) has a number of interesting chapters by authors who
-are passionate about how computing is taught in schools. The central
-theme is unplugged activities, without using computers, but still teach
-the fundamental of computational thinking.
-
-Ok, confession time. I co-wrote, along with Katharine Childs (Raspberry
-Pi Foudation), Chapter 3 Artists so I am biased here, but I believe in
-the central theme of Unplugged Computing. Computing, and Computational
-Thinking in general, is not just about programming and using a computer
-(though using computers and programming are vitally important to
-Computing) but it is also about many other things including
-problem-solving, being creative and working collaboratively.
-
-Chapter 3 is about linking these computational thinking ideas to produce
-visual art, by applying computing principles including repetition,
-following and refining algorithms, and abstraction. The chapter also
-looks, how these links have already being made, with examples such Sol
-Le Witt where not all the work that was produced by the artist himself,
-but some by others following his written instructions - in other words
-an algorithm. There is even a game Thomas's Tangles
-
-The other chapters make links with areas such as Robots, Musicians,
-Explorers, Magicians, Gamers, Cooks and Scientists.
