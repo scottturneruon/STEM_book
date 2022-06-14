@@ -1,6 +1,6 @@
 # Computational Thinking
 
-## Thomas Tangles
+## Thomas Tangles 1
 
 This simplifies the algorithm Thomas' Tangles (named after my son who helped develop it) in Chapter 3 of the book discussed in [http://compuationalthinking.blogspot.co.uk/2016/11/how-to-be-unplugged-artist.html](http://compuationalthinking.blogspot.co.uk/2016/11/how-to-be-unplugged-artist.html)
 
