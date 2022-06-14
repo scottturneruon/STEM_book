@@ -221,6 +221,6 @@ Now adding it the code in place of the current `<a-sky\>` line we:
 
 We are done!
 
-![Starting point](figures/planet3.png)
+![We are done](figures/Planetcccucomputing.gif)
 
 ------------------------------
