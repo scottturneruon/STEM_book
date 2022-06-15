@@ -174,7 +174,7 @@ So we might want to put some text into the world we can do that with `<a-text va
   </body>
 </html>
 ```
-![Starting point](figures/Picture2.png)
+![Starting point](figures/planet2.png)
 
 We can get interesting effects if we add the text between `<a-sphere\>` and `<a-scene\>` Try adding this in there. `<a-text value="Planet CCCU Computing" position="0 3 -2"><a-text\>`
 
