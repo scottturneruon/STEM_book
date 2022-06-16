@@ -7,6 +7,7 @@ src = "content"
 
 [output.html]
 mathjax-support = true
+print = false
 
 [output.html.search]
 limit-results = 20
