@@ -7,6 +7,12 @@ src = "content"
 
 [output.html]
 mathjax-support = true
+git-repository-url = "https://github.com/scottturneruon/STEM_book/tree/main/content"
+git-repository-icon = "fa-github"
+edit-url-template = "https://github.com/scottturneruon/STEM_book/edit/main/{path}"
+
+[output.html.print]
+enable = true
 
 [output.html.search]
 limit-results = 20
