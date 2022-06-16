@@ -7,12 +7,12 @@ src = "content"
 
 [output.html]
 mathjax-support = true
-
-[output.html.print]
-enable = false
 git-repository-url = "https://github.com/cccu-uk/STEM_book/tree/main/content"
 git-repository-icon = "fa-github"
 edit-url-template = "https://github.com/cccu-uk/STEM_book/edit/main/{path}"
+
+[output.html.print]
+enable = false
 
 [output.html.search]
 limit-results = 20
