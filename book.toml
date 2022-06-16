@@ -10,6 +10,8 @@ mathjax-support = true
 
 [output.html.print]
 enable = false
+git-repository-url = "https://github.com/cccu-uk/STEM_book/tree/main/content"
+edit-url-template = "https://github.com/cccu-uk/STEM_book/edit/main/{path}"
 
 [output.html.search]
 limit-results = 20
